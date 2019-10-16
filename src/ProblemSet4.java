@@ -28,15 +28,15 @@ public class ProblemSet4 {
         // comment out or uncomment as needed
         
         ps.sum();
-        ps.reverse();
-        ps.digits();
-        ps.average();
-        ps.prime();
-        ps.fibonacci();
-        ps.factors();
-        ps.mario();
-        ps.luigi();
-        ps.credit();
+        //ps.reverse();
+        //ps.digits();
+        //ps.average();
+        //ps.prime();
+        //ps.fibonacci();
+        //ps.factors();
+        //ps.mario();
+        //ps.luigi();
+        //ps.credit();
                 
         in.close();
     }
@@ -52,6 +52,31 @@ public class ProblemSet4 {
      */
     
     public void sum() {
+
+        int lowerBound;
+        int upperBound;
+        int addedValue = 0;
+        
+        do {
+            System.out.print("Lower bound: ");
+            lowerBound = in.nextInt();
+            in.nextLine();
+            System.out.print("Upper bound: ");
+            upperBound = in.nextInt();
+            in.nextLine();
+
+        } while (upperBound < lowerBound);
+
+        while(lowerBound < upperBound){
+            
+            if(lowerBound % 2 == 0){
+                addedValue = addedValue + lowerBound;
+            }
+            lowerBound++;
+        }
+
+        System.out.
+                
 
     }
     
