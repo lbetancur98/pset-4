@@ -27,8 +27,8 @@ public class ProblemSet4 {
         
         // comment out or uncomment as needed
         
-        ps.sum();
-        //ps.reverse();
+        //ps.sum();
+        ps.reverse();
         //ps.digits();
         //ps.average();
         //ps.prime();
@@ -67,7 +67,7 @@ public class ProblemSet4 {
 
         } while (upperBound < lowerBound);
 
-        while(lowerBound < upperBound){
+        while(lowerBound <= upperBound){
             
             if(lowerBound % 2 == 0){
                 addedValue = addedValue + lowerBound;
@@ -75,7 +75,7 @@ public class ProblemSet4 {
             lowerBound++;
         }
 
-        System.out.
+        System.out.printf("\n %,d. ", addedValue);
                 
 
     }
@@ -88,7 +88,21 @@ public class ProblemSet4 {
      */
     
     public void reverse() {
+        int integer;
+        String stringAdd;
+        
+        do {
+            System.out.print("Positive Integer: ");
+            integer = in.nextInt();
+            in.nextLine();
+            
+        } while (integer <= 0);
 
+        String integerString = String.valueOf(integer);
+        for(i = integerString.length(); i >= 0 ; i--){
+            stringAdd = 
+        }
+        
     }
     
     /*
