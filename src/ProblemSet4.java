@@ -28,10 +28,10 @@ public class ProblemSet4 {
         // comment out or uncomment as needed
         
         //ps.sum();
-        ps.reverse();
+        //ps.reverse();
         //ps.digits();
         //ps.average();
-        //ps.prime();
+        ps.prime();
         //ps.fibonacci();
         //ps.factors();
         //ps.mario();
@@ -89,7 +89,7 @@ public class ProblemSet4 {
     
     public void reverse() {
         int integer;
-        String stringAdd;
+        String stringAdd = "";
         
         do {
             System.out.print("Positive Integer: ");
@@ -99,10 +99,20 @@ public class ProblemSet4 {
         } while (integer <= 0);
 
         String integerString = String.valueOf(integer);
-        for(i = integerString.length(); i >= 0 ; i--){
-            stringAdd = 
+        for(int i = integerString.length(); i >= 1 ; i--){
+            
+            if(i-1 == 0){
+                stringAdd = stringAdd + integerString.charAt(i-1)+". ";
+            } else {
+                stringAdd = stringAdd + integerString.charAt(i-1)+", ";
+            }
+            
+            
+           
+
         }
         
+         System.out.println("\n" + stringAdd);
     }
     
     /*
@@ -114,7 +124,33 @@ public class ProblemSet4 {
     
     public void digits() {
 
+        int integer;
+        String stringAdd = "";
+        int sumOfOdds = 0;
+        
+        do {
+            System.out.print("Positive Integer: ");
+            integer = in.nextInt();
+            in.nextLine();
+            
+        } while (integer <= 0);
+
+        String integerString = String.valueOf(integer);
+
+        for(int i = integerString.length(); i >= 1 ; i--){
+            
+        
+            if(Integer.parseInt(Character.toString(integerString.charAt(i-1))) % 2 != 0){
+                sumOfOdds += Integer.parseInt(Character.toString(integerString.charAt(i-1)));
+            }
+           
+
+        }
+        
+         System.out.println("\n" + sumOfOdds+ ".");
     }
+    
+    
     
     /*
      * Exercise 4.
@@ -125,6 +161,30 @@ public class ProblemSet4 {
      */
     
     public void average() {
+        
+        int integer;
+        double sumOfNumbers = 0;
+        double numberOfNumbers = 0;
+        double averageOfNumbers;
+        
+        do {
+            System.out.print("Non-negative integer: ");
+            integer = in.nextInt();
+            in.nextLine();
+            
+
+            if(integer != -1){
+                sumOfNumbers = sumOfNumbers + integer;
+                numberOfNumbers++;
+            }
+            
+            
+        } while (integer != -1);
+
+
+        averageOfNumbers = sumOfNumbers / numberOfNumbers;
+        
+        System.out.printf("\n%,.2f.", averageOfNumbers);
 
     }
     
