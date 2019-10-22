@@ -195,7 +195,30 @@ public class ProblemSet4 {
      */
     
     public void prime() {
+        
+        int integer;
+        
+        do {
+            System.out.print("Non-negative integer: ");
+            integer = in.nextInt();
+            in.nextLine();
+            final boolean prime;
+            
+        } while (integer <= 0);
 
+        for(int i =2; i<= integer; i++){
+            if (integer % i == 0){
+                prime = true;
+            }
+        }
+
+        
+
+        if(prime == true){
+            System.out.println("Prime.");
+        } else {
+            System.out.println("Not prime.");
+        }
     }
     
     /*
