@@ -31,9 +31,9 @@ public class ProblemSet4 {
         //ps.reverse();
         //ps.digits();
         //ps.average();
-        ps.prime();
+        //ps.prime();
         //ps.fibonacci();
-        //ps.factors();
+        ps.factors();
         //ps.mario();
         //ps.luigi();
         //ps.credit();
@@ -197,27 +197,30 @@ public class ProblemSet4 {
     public void prime() {
         
         int integer;
+        boolean prime = true;
         
         do {
             System.out.print("Non-negative integer: ");
             integer = in.nextInt();
             in.nextLine();
-            final boolean prime;
+            
             
         } while (integer <= 0);
 
-        for(int i =2; i<= integer; i++){
+        for(int i =2; i < integer; i++){
             if (integer % i == 0){
-                prime = true;
+                prime = false;
+                i = integer;
+                
             }
         }
 
         
 
-        if(prime == true){
-            System.out.println("Prime.");
+        if(prime == false){
+            System.out.println("\nNot Prime.");
         } else {
-            System.out.println("Not prime.");
+            System.out.println("\nPrime.");
         }
     }
     
@@ -230,6 +233,30 @@ public class ProblemSet4 {
     
     public void fibonacci() {
 
+        int numberOfSequences;
+        int n1 = 1;
+        int n2 = 1;
+        
+        int n3 = 1;
+        
+        do {
+            System.out.print("Positive integer: ");
+            numberOfSequences = in.nextInt();
+            in.nextLine();
+            
+            
+        } while (!(numberOfSequences >= 1) || !(numberOfSequences <=92));
+
+        for( int i = 3; i <= numberOfSequences; i++){
+            n3 = n1+n2;
+             
+            n1 = n2;
+            n2 = n3;
+              
+        }
+
+        System.out.println(n3 + ".");
+
     }
     
     /*
@@ -239,6 +266,61 @@ public class ProblemSet4 {
      */
     
     public void factors() {
+
+        int integer;
+        String factors = " ";
+        int count = 0;
+        int sameQuestion = 1;
+
+        do {
+            System.out.print("Positive integer: ");
+            integer = in.nextInt();
+            in.nextLine();
+            
+            
+        } while (integer <= 0);
+
+        for(int i =1; i < integer; i++){
+            if (integer % i == 0){
+
+
+                if(count == 0){
+                        factors = factors +  i + ", " + integer/i;
+                } else {
+                    for(int j=0; j<=factors.length()-1;j++) {
+                        System.out.println(Character.forDigit(i, 10));
+                        System.out.println(integer/i);
+                        
+                        if(factors.charAt(j) == Character.forDigit(i, 10) ){
+                            System.out.println("here");
+                            sameQuestion = 0;
+                            j = factors.length();
+                        } else {
+                            sameQuestion = 1;
+                        }
+                        
+                        
+                        
+                    }
+                    if(sameQuestion == 1){
+                        factors = factors + ", " + i + ", " + integer/i;
+                    } else {
+
+                    }
+                
+                }
+                
+               
+
+                
+                
+                
+            }
+
+            count++;
+        }
+
+        System.out.println(factors + ".");
 
     }
     
