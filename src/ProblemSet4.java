@@ -27,16 +27,16 @@ public class ProblemSet4 {
         
         // comment out or uncomment as needed
         
-        //ps.sum();
-        //ps.reverse();
-        //ps.digits();
-        //ps.average();
-        //ps.prime();
-        //ps.fibonacci();
+        ps.sum();
+        ps.reverse();
+        ps.digits();
+        ps.average();
+        ps.prime();
+        ps.fibonacci();
         ps.factors();
-        //ps.mario();
-        //ps.luigi();
-        //ps.credit();
+        ps.mario();
+        ps.luigi();
+        ps.credit();
                 
         in.close();
     }
@@ -92,7 +92,7 @@ public class ProblemSet4 {
         String stringAdd = "";
         
         do {
-            System.out.print("Positive Integer: ");
+            System.out.print("\n\nPositive Integer: ");
             integer = in.nextInt();
             in.nextLine();
             
@@ -129,7 +129,7 @@ public class ProblemSet4 {
         int sumOfOdds = 0;
         
         do {
-            System.out.print("Positive Integer: ");
+            System.out.print("\nPositive Integer: ");
             integer = in.nextInt();
             in.nextLine();
             
@@ -147,7 +147,7 @@ public class ProblemSet4 {
 
         }
         
-         System.out.println("\n" + sumOfOdds+ ".");
+         System.out.println("\n" + sumOfOdds+ ".\n");
     }
     
     
@@ -184,7 +184,7 @@ public class ProblemSet4 {
 
         averageOfNumbers = sumOfNumbers / numberOfNumbers;
         
-        System.out.printf("\n%,.2f.", averageOfNumbers);
+        System.out.printf("\n%,.2f.\n", averageOfNumbers);
 
     }
     
@@ -200,7 +200,7 @@ public class ProblemSet4 {
         boolean prime = true;
         
         do {
-            System.out.print("Non-negative integer: ");
+            System.out.print("\nNon-negative integer: ");
             integer = in.nextInt();
             in.nextLine();
             
@@ -240,7 +240,7 @@ public class ProblemSet4 {
         int n3 = 1;
         
         do {
-            System.out.print("Positive integer: ");
+            System.out.print("\nPositive integer: ");
             numberOfSequences = in.nextInt();
             in.nextLine();
             
@@ -254,9 +254,7 @@ public class ProblemSet4 {
             n2 = n3;
               
         }
-
-        System.out.println(n3 + ".");
-
+        System.out.println("\n" + n3 + ".");
     }
     
     /*
@@ -266,63 +264,56 @@ public class ProblemSet4 {
      */
     
     public void factors() {
+        System.out.print("\nPositive integer: ");
+        int integer = in .nextInt();
 
-        int integer;
-        String factors = " ";
-        int count = 0;
-        int sameQuestion = 1;
-
-        do {
+        while (integer <= 0) {
             System.out.print("Positive integer: ");
-            integer = in.nextInt();
-            in.nextLine();
-            
-            
-        } while (integer <= 0);
-
-        for(int i =1; i < integer; i++){
-            if (integer % i == 0){
-
-
-                if(count == 0){
-                        factors = factors +  i + ", " + integer/i;
-                } else {
-                    for(int j=0; j<=factors.length()-1;j++) {
-                        System.out.println(Character.forDigit(i, 10));
-                        System.out.println(integer/i);
-                        
-                        if(factors.charAt(j) == Character.forDigit(i, 10) ){
-                            System.out.println("here");
-                            sameQuestion = 0;
-                            j = factors.length();
-                        } else {
-                            sameQuestion = 1;
-                        }
-                        
-                        
-                        
-                    }
-                    if(sameQuestion == 1){
-                        factors = factors + ", " + i + ", " + integer/i;
-                    } else {
-
-                    }
-                
-                }
-                
-               
-
-                
-                
-                
-            }
-
-            count++;
+            integer = in .nextInt();
         }
 
-        System.out.println(factors + ".");
+        System.out.print("\n");
 
+        for (int i = 1; i <= integer / 2; i++) {
+
+
+            if (integer % i == 0) {
+                if (i > integer / i) {
+
+
+                    System.out.print(".\n\n");
+                    return;
+
+
+                } else {
+
+
+                    if (i == 1) {
+                                             
+                        System.out.print(i + ", " + (integer/ i));
+
+
+                    } else {
+
+
+                        if (i != (integer / i)) { 
+
+                            System.out.print(", " + i + ", " + (integer / i));
+
+                        } else {
+
+                            System.out.print(", " + i + ".\n\n");
+                            return;
+
+
+                        }
+                    }
+                }
+            }
+        }
     }
+
+     
     
     /*
      * Exercise 8.
@@ -331,7 +322,41 @@ public class ProblemSet4 {
      * Mario-style half-pyramid of the specified height.
      */
     
-    public void mario() {        
+    public void mario() {
+        
+        int height =-1;
+        String value = "";       
+        String y = " ";
+        String z = "#";
+
+        do {
+            
+            System.out.print("Height: ");
+            height = in .nextInt();
+            
+        } while (height < 1 || height > 24);
+
+        System.out.print("\n");
+        int x = height;
+
+       
+
+        for (int i = 0; i < x; i++) {
+
+            for (int j = 0; j < x - (i + 1); j++) {
+
+                value = value + y;
+
+            }
+            for (int k = 0; k < i + 2; k++) {
+
+                value = value + z;
+
+            }
+
+            value = value + '\n';
+        }
+        System.out.print(value + "\n");
 
     }
     
@@ -343,7 +368,44 @@ public class ProblemSet4 {
      */
     
     public void luigi() {
+        int height;
+        String value = "";
+       
+        String y = " ";
+        String z = "#";
 
+        do {
+            
+            System.out.print("Height: ");
+            height = in .nextInt();
+            
+        } while (height < 1 || height > 24); 
+
+        int x = height;
+        System.out.print("\n");
+
+        
+
+        for (int i = 0; i < height; i++) {
+
+            for (int j = 0; j < height - (i + 1); j++) {
+                value += y;
+            }
+
+            for (int j = 0; j <= i + 1; j++) {
+                value += z;
+            }
+
+            value += y;
+            value += y;
+
+            for (int j = 0; j <= i + 1; j++) {
+                value += z;
+            }
+            value += "\n";
+        }
+
+        System.out.print(value);
     }
     
     /*
@@ -353,7 +415,48 @@ public class ProblemSet4 {
      * Luhn's algorithm, is the credit card number valid?
      */
     
-    public void credit() {
-        
+    public void credit() { in .nextLine();
+        System.out.print("\nNumber: ");
+        String number = in .nextLine();
+        int sumEveryOther = 0;
+        int numberMultiply;
+        int finalSum = 0;
+
+        for (int i = number.length() - 2; i >= 0; i -= 2) {
+
+            numberMultiply = Character.getNumericValue(number.charAt(i));
+            sumEveryOther = numberMultiply * 2;
+
+            if (sumEveryOther >= 10) {              
+                finalSum += (int)((sumEveryOther / Math.pow(10, 0)) % 10) + (int)((sumEveryOther / Math.pow(10, 1)) % 10);
+            } else {
+                finalSum += sumEveryOther;
+            }
+
+        }
+
+        for (int i = number.length() - 1; i >= 0; i -= 2) {
+            numberMultiply = Character.getNumericValue(number.charAt(i));
+            finalSum += numberMultiply;
+        }
+
+        String stringEveryOther = Integer.toString(finalSum);
+
+
+        if (stringEveryOther.charAt(stringEveryOther.length() - 1) == '0') {
+
+            if (number.charAt(0) == '3' && (number.charAt(1) == '4' || number.charAt(1) == '7')) {
+                System.out.println("\nAmex.\n");
+            } else if (number.charAt(0) == '5' && (number.charAt(1) == '1' || number.charAt(1) == '2' || number.charAt(3) == '3' || number.charAt(4) == '4' || number.charAt(5) == '5')) {
+                System.out.println("\nMastercard.\n");
+            } else if (number.charAt(0) == '4') {
+                System.out.println("\nVisa.\n");
+            }
+
+
+        } else {
+            System.out.println("\nInvalid.\n");
+        }
     }
+
 }
